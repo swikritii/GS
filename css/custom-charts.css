@@ -1,0 +1,133 @@
+.apexcharts-legend .apexcharts-legend-series .apexcharts-legend-text, .apexcharts-text tspan , .apexcharts-theme-light .apexcharts-tooltip-title, .apexcharts-tooltip-y-group, .apexcharts-xaxistooltip{
+    /* font-weight: 400; */
+    line-height: 18px !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+.apexcharts-legend .apexcharts-legend-series .apexcharts-legend-text{
+    font-size: 14px !important;
+    color: #757575 !important;
+}
+.apexcharts-text tspan, .apex-charts-tooltip-title, .apexcharts-theme-light .apexcharts-tooltip-title{
+    font-size: 14px !important;
+    color: #757575 !important;
+}
+#columnchart .apexcharts-tooltip-y-group, #columnchart .apexcharts-xaxistooltip{
+    font-size: 13px !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #757575 !important;
+}
+
+#column-chart .apexcharts-xaxis-label tspan{
+    font-weight: 600;
+}
+#columnchart .apexcharts-tooltip-title{
+ background: #E0F8FE !important;
+ padding: 6px 15px !important;
+ font-weight: 500 !important;
+}
+
+.apexcharts-legend.position-right {
+   justify-content: center !important;
+   right: 85px !important;
+}
+
+.apexcharts-legend.position-right .apexcharts-legend-series{
+    margin-bottom: 20px !important;
+}
+
+.apexcharts-legend.position-bottom .apexcharts-legend-series{
+    margin: 0 70px !important;
+}
+
+.apexcharts-legend .apexcharts-legend-marker{
+    margin-right: 6px !important;
+    width: 14px !important;
+    height: 14px !important;
+}
+
+.apexcharts-legend.position-right .apexcharts-legend-series {
+    display: flex;
+    align-items: center;
+}
+
+#columnchart .apexcharts-menu-icon{
+    display: none;
+}
+
+#polararea-chart .apexcharts-tooltip-y-group .apexcharts-tooltip-text-label, #polararea-chart .apexcharts-tooltip-y-group .apexcharts-tooltip-text-value{
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+}
+
+#polararea-chart .apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-series-group.apexcharts-active{
+    padding-bottom: 0 !important; 
+}
+
+#polararea-chart .apexcharts-pie-label{
+    font-size: 12px !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+@media only screen and (max-width: 1560px){
+ 
+    .apexcharts-legend.position-right {
+        right: 45px !important;
+    }
+}
+
+@media only screen and (max-width: 1280px){
+    .apexcharts-legend .apexcharts-legend-series .apexcharts-legend-text{
+        font-size: 10px !important;
+    }
+    .apexcharts-text tspan, .apex-charts-tooltip-title, .apexcharts-theme-light .apexcharts-tooltip-title{
+        font-size: 9px !important;
+    }
+    #columnchart .apexcharts-tooltip-y-group, #columnchart .apexcharts-xaxistooltip{
+        font-size: 8px !important;
+    }
+    .apexcharts-tooltip-marker{
+        width: 8px !important;
+        height: 8px !important;
+    }
+    .apexcharts-tooltip-y-group {
+        padding: 2px 0 2px !important;
+    }
+    .apexcharts-legend .apexcharts-legend-marker{
+        margin-right: 6px !important;
+    }
+    #columnchart .apexcharts-tooltip-title{
+        padding: 4px 15px !important;
+    }
+    #polararea-chart .apexcharts-pie-label{
+        font-size: 8px !important;
+    }
+    #polararea-chart .apexcharts-tooltip-text{
+        font-family: 'Poppins', sans-serif !important;
+    }
+
+    #polararea-chart .apexcharts-tooltip-y-group .apexcharts-tooltip-text-label, #polararea-chart .apexcharts-tooltip-y-group .apexcharts-tooltip-text-value{
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 10px !important;
+    }
+
+    #polararea-chart .apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-series-group.apexcharts-active{
+        font-size: 8px !important;
+        font-family: 'Poppins', sans-serif !important;
+        padding-bottom: 0 !important; 
+    }
+    .apexcharts-legend.position-right {
+        justify-content: center !important;
+        right: 50px !important;
+     }
+     
+    .apexcharts-legend.position-right .apexcharts-legend-series{
+        margin-bottom: 8px !important;
+    }
+    
+    .apexcharts-legend.position-bottom .apexcharts-legend-series{
+        margin: 0 60px !important;
+    }
+    #polararea-chart .apexcharts-legend.position-right .apexcharts-legend-series .apexcharts-legend-marker, #columnchart .apexcharts-legend.position-bottom .apexcharts-legend-series .apexcharts-legend-marker{
+        border-width: 3px !important;
+    }
+}

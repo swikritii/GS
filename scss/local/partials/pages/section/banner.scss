@@ -1,0 +1,87 @@
+.banner-slider-section{
+    height: 100vh;
+    @include display-flex(flex);
+    @include align-items-center;
+    @include justify-content-center;
+    // background-image: linear-gradient(to bottom, #2a1b3c, #301f4a, #362358, #3c2767, #402b77, #473180, #4e378a, #553d93, #614798, #6c519d, #775ba2, #8265a7);
+    z-index: 0;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($site-color-dark, .87);
+        z-index: 1;
+    }
+}
+.slider-gallery{
+    position: relative;
+    z-index: 2;
+    top: 4rem;
+    .slider-item{
+        padding: 0 10px;
+        height: 50vh;
+        &.slick-center{
+            a{
+                opacity: 1;
+                img{
+                   @include transformScale(1.1);
+                }
+                &::before{
+                    background: rgba($black-color, 0);
+                }
+            }
+        }
+        a{
+            opacity: .8;
+            position: relative;
+            z-index: 0;
+            display: block;
+            height: 100%;
+            font-size: 0;
+            line-height: 0;
+            border-radius: 10px;
+            overflow: hidden;
+           
+            &::before{
+                @include transition(background .4s ease);
+                content: ' ';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+                background: rgba($black-color, .3);
+            }
+            &:hover{
+                &::before{
+                    background: rgba($secondary-color, .4);
+                }
+             }
+            img{
+                position: absolute;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                -o-object-fit: cover;
+                object-fit: cover;
+                -o-object-position: center;
+                object-position: center;
+                border-radius: 10px;
+                @include transition(all .4s ease);
+            }
+        }
+    }
+}
+#myVideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}

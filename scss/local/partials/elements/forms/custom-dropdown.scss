@@ -1,0 +1,217 @@
+.custom-dropdown{
+    position: relative;
+    a.dropdown-link{
+        position: relative;
+        padding-right: 1.25rem;
+        @include display-flex(flex);
+        @include align-items-center;
+        @include transition(all .4s ease);
+         height: 2.65rem;
+        line-height: 2.65rem;
+        padding: 0 2.5rem 0 .5rem;
+        @include radius(10px);
+        &::after{
+            content:'arrow_drop_down';
+            font-family: 'Material Icons';
+            position: absolute;
+            top:50%;
+            @include transform(translateY(-50%));
+            z-index: 2;
+            right: 0;
+            font-size: 22px;
+            color: $body-color;
+        }
+        @media #{$breakpoint-md-desktop}{
+            height: 2.25rem;
+            line-height: 2.25rem;
+            padding: 0 1.25rem 0 .5rem;  
+            &::after{
+                font-size: 18px;
+            }
+        }
+        &.is-border{
+            border: 1px solid $border-color;
+            img{
+                width: 32px;
+                height: 32px;
+                margin-right: .25rem;
+                @media #{$breakpoint-md-desktop}{
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+        }
+        span.span-18{
+            font-weight: 600;
+            color: $heading-color;
+        }
+        img{
+            width: 45px;
+            height: 45px;
+            @include radius(5px);
+            border: 1px solid transparent;
+            @media #{$breakpoint-md-desktop}{
+                width: 36px;
+                height: 36px;
+            }
+        }
+        
+    }
+    &.active,
+    &:hover{
+        a.dropdown-link{ 
+            cursor: pointer;
+            background: $secondary-light;
+            &.is-border{
+                border: 1px solid $secondary-color;
+            }
+        }
+        img{
+            border: 1px solid $secondary-color;
+        }
+    }
+    &.is-option{
+        a{
+            padding-right: 0;
+            &:after{
+                display: none;
+            }
+        }
+    }
+    ul{
+        &.custom-dropdown-menu{
+            display: initial;
+            position: absolute;
+            top: 110%;
+            min-width: 150px;
+            background-color: $white-color;
+            @include radius(10px);
+            z-index: 1001;
+            display: none;
+            @include box-shadow(0 5px 15px rgba(0, 0, 0, 0.15));
+            &::before{
+                content: "";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 10px 10px 10px;
+                border-color: transparent transparent $white-color transparent;
+                position: absolute;
+                left: 30px;
+                top: -10px;
+                @include box-shadow(0 10px 40px rgba($heading-color,.2));
+            }
+            @media #{$breakpoint-md-desktop}{
+                min-width: 120px;
+                &::before {
+                    border-width: 0 8px 8px 8px;
+                    top: -8px;
+                }
+            }
+            li{
+                border: 1px solid $border-color;
+                border-bottom: 0;
+                margin:0;
+                &:first-child{
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+                &:last-child{
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+                a{
+                    font-weight: 400 !important;
+                    color: $heading-color;
+                    padding: .525rem 1rem;
+                    padding-right: 3rem;
+                    @include transition(all .4s ease-in-out);
+                    @include display-flex(flex);
+                    @include justify-content-start;
+                    @include align-items-center;
+                    text-transform: capitalize;
+                    white-space: nowrap;
+                    i,svg{
+                        margin-right: .6125rem;
+                        font-size: 1.5rem;
+                        @media #{$breakpoint-md-desktop}{
+                            font-size: 1.25rem;
+                        }
+                    }
+                    &::after{
+                        content:none;
+                    }
+                   
+                    @media #{$breakpoint-md-desktop}{
+                        padding: .5rem .75rem;
+                        padding-right: 2rem;
+                    }
+                }
+               /*  &:not(:last-child){
+                    border-bottom: 0 solid $border-color;
+                } */
+                &:hover{
+                    background: $secondary-light;
+                    cursor: pointer;
+                    a{
+                        font-weight: 600 !important;
+                        i{color: $secondary-color;}
+                    }
+                }
+            }
+        }
+    }
+    &.profile-dropdown{
+        a{
+            &::after{
+                display: none;
+            }
+        }
+        ul{
+            &.custom-dropdown-menu{
+                li{
+                    &:last-child{
+                        a{
+                            padding: 1rem;
+                            padding-right: 3rem;
+                            @media #{$breakpoint-md-desktop}{
+                                padding: .75rem;
+                            }
+                        }
+                        border-top: 1px solid $border-color;
+                    }
+                }
+            }
+        }
+    }
+    &.is-right{
+        ul{
+            &.custom-dropdown-menu{
+                right:0;
+                &::before,&::after{
+                    right:10px;
+                    left:auto;
+                }
+            }
+        }
+    }
+    &.is-left{
+        ul{
+            &.custom-dropdown-menu{
+                left:0;
+                &::before,&::after{
+                    right:10px;
+                    left:auto;
+                }
+            }
+        }
+    }
+    &.profile-dropdown-img{
+        a.dropdown-link{
+            padding: 0;
+            &:after{
+                display: none;
+            }
+        }
+    }
+}

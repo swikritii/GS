@@ -1,0 +1,112 @@
+.dashboard-card{
+    @include radius(8px);
+    background: $white-color;
+    border: 1px solid $border-color;
+    .card-header{
+        border-bottom: 1px solid $border-color;
+        padding: 12px 20px;
+        @include display-flex(flex);
+        @include align-items-center;
+        @include justify-content-between;
+        @media #{$breakpoint-md-desktop}{
+            padding: 6px 15px;
+        }
+        .left{
+            h3{
+                color: $primary-color;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+        }
+        .right{
+            .list-item{
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .card-body{
+        padding: 15px 0px;
+        &.map-body{
+            position: relative;
+            height: 440px;
+            @media #{$breakpoint-md-desktop}{
+                height: 370px
+            }
+            #map-content{
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                .mapboxgl-canvas{
+                    width: 100% !important;
+                }
+                &:focus{
+                    outline: none;
+                    border: 0;
+                }
+            }
+            ul.info-table{
+                right: 2rem;
+                top: 2rem;
+                width: 440px;
+                position: absolute;
+                @include radius(10px);
+                @include box-shadow(0px 5px 15px rgba($black-color, .16));
+                border: 1px solid $border-color;
+                background: $white-color;
+                z-index: 1;
+                @media #{$breakpoint-lg-desktop}{
+                    width: 380px;
+                }
+                @media #{$breakpoint-md-desktop}{
+                    width: 320px;
+                }
+                li{
+                    @include display-flex(flex);
+                    @include align-items-center;
+                    @include justify-content-between;
+                    padding: 5px 20px;
+                    &:not(:last-child){
+                        border: 1px solid $border-color;
+                        border-top: 0;
+                    }
+                    &.header{
+                        background: $grey-light;
+                        padding: 8px 20px;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                        span{
+                            text-transform: uppercase;
+                            color: $primary-color;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .info-table-body{
+                    height: 340px;
+                    @media #{$breakpoint-md-desktop}{
+                       height: 260px;
+                    }
+                    li{
+                        span{
+                            text-transform: capitalize;
+                            &.count{
+                                font-weight: 700;
+                                color: $heading-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #columnchart, #polararea-chart{
+            width: 100%;
+            height: 400px;
+            min-height: 400px !important;
+            @include display-flex(flex);
+            @include align-items-center;
+        }
+    }
+}

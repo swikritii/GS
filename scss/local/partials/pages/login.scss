@@ -1,0 +1,164 @@
+.login-page{
+    position: relative;
+    width: 100%;
+    @include display-flex(flex);
+    @include align-items-stretch;
+    @media #{$breakpoint-lg-desktop}{
+        height: auto !important;
+    }
+    @media #{$breakpoint-xl}{
+        @include flex-direction-column(column);
+    }
+
+    .login-content{
+       flex: 0 0 45%;
+        padding: 3rem;
+        padding-top: 5em;
+        @media #{$breakpoint-md-desktop}{
+            // width: calc(100% - 850px);
+            padding-top: 3rem;
+            padding: 2rem;
+        }
+        @media #{$breakpoint-xl}{ 
+            @include display-flex(flex);
+            order: 2;
+            width: 100%;
+        }
+        .logo{
+            svg, img{
+                max-width: 160px;
+                @media #{$breakpoint-md-desktop}{
+                    max-width: 125px;
+                }
+            }
+            @media #{$breakpoint-xl}{ 
+                text-align: center;
+            }
+        }
+        .login-form{
+            max-width: 500px;
+            height: 100%;
+            margin: auto;
+            position: relative;
+            @media #{$breakpoint-lg-desktop}{
+                max-width: 450px;
+            }
+            @media #{$breakpoint-md-desktop}{
+                max-width: 340px;
+            }
+            .login-header{
+                margin-top: 5rem;
+                h1{
+                    color: $primary-color;
+                    margin-bottom: 20px;
+                }
+                @media #{$breakpoint-md-desktop}{
+                    margin-top: 4rem;
+                    h1{
+                        margin-bottom: 15px;
+                    }
+                }
+                @media #{$breakpoint-xl}{
+                    text-align: center;
+                }
+            }
+            .login-body{
+                margin: 3.5rem 0 6rem;
+                @media #{$breakpoint-md-desktop}{
+                    margin: 3rem 0 6rem;
+                }
+                .form-group-wrap{
+                    @include display-flex(flex);
+                    @include align-items-center;
+                    @include justify-content-between;
+                    @media #{$breakpoint-xxs}{
+                        @include flex-direction-column(column);
+                        text-align: center;
+                        @include justify-content-center;
+                    }
+                }
+                .form-group{
+                    &.mb-30{
+                        margin-bottom: 30px;
+                        @media #{$breakpoint-md-desktop}{
+                            margin-bottom: 25px;
+                        }
+                    }
+                    
+                }
+                .buttons{
+                    margin-top: 2.5rem;
+                    @media #{$breakpoint-md-desktop}{
+                        margin-top: 2rem;
+                    }
+                    a{
+                        &.signin-button{
+                            position: relative;
+                            span{
+                                position: relative;
+                                z-index: 11;
+                            }
+                            &::before{
+                                position: absolute;
+                                content: ' ';
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 0;
+                                @include transition(all .4s linear);
+                            }
+                            &:hover {
+                                @include box-shadow(none);
+                                &::before{
+                                    height:100%;
+                                    background: $secondary-medium;
+                                }
+                            }
+                        }
+                        h4{
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+            .login-footer{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                a{
+                    font-weight: 400;
+                    color: $body-color;
+                    text-decoration: underline;
+                    &:hover{
+                        color: $secondary-color;
+                    }
+                }
+                @media #{$breakpoint-xl}{
+                    position: relative;
+                }
+            }
+        }
+    }
+    .login-bg{
+        flex: 0 0 55%;
+        position: relative;
+        @include cover(center);
+        @media #{$breakpoint-md-desktop}{
+            // max-width: 850px;
+        }
+        @media #{$breakpoint-xl}{ 
+            height: 200px;
+            max-width: 100%;
+            @include display-flex(flex);
+            order: 1;
+        }
+        .copyright{
+            color: $white-color;
+            position: absolute;
+            bottom: 2rem;
+            right: 3rem;
+           
+        }
+    }
+}

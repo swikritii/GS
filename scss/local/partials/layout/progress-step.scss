@@ -1,0 +1,72 @@
+.progress-step-wrap{
+    padding: 12px 0;
+    border: 1px solid $border-dark;
+    background-color: $white-color;
+    @media #{$breakpoint-md-desktop}{
+        padding: 6px 0;
+        border: .5px solid $border-dark;
+    }
+    ul{
+        &.progress-step{
+            width: 50%;
+            margin: 0 auto;
+            @include display-flex(flex);
+            @include justify-content-around;
+            @include align-items-center;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            li{
+                @include flex(0 0 33.33%);
+                max-width: 33.33%;
+                position: relative;
+                text-align: center;
+                font-weight: 600;
+                color: $grey-light;;
+                span{
+                    text-transform: capitalize;
+                    background: $white-color;
+                    padding-right: 10px;
+                }
+                &::after{
+                    content:'';
+                    width:100%;
+                    border: 1px dashed $border-dark;
+                    position: absolute;
+                    z-index: -1;
+                    top: 14px;
+                    left: -50%;
+                }
+                &::before{
+                    content:'radio_button_unchecked';
+                    font-family: 'Material Icons';
+                    color: $border-dark;
+                    display: inline;
+                    margin: 0 auto;
+                    position: relative;
+                    z-index: 2;
+                    background-color: $white-color;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    vertical-align: middle;
+                    padding: 0 10px;
+                };
+                &:first-child{
+                    &::after{
+                        content:none;
+                    }
+                }
+                &.active{
+                    color:$primary-color;
+                    &::before{
+                        content:'check_circle';
+                        color:$primary-color;
+                    }
+                }
+            }
+            @media #{$breakpoint-lg}{
+                width: 100%;
+            }
+        }
+    }
+}

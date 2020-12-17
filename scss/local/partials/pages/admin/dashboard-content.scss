@@ -1,0 +1,190 @@
+.admin-main{
+    .dashboard-header{
+        position: relative;
+        @include display-flex(flex);
+        @include align-items-center;
+        @include justify-content-between;
+        .left,
+        .right{
+            .item{
+                &:not(:last-child){
+                    margin-right: 1rem;
+                }
+            }
+        }
+        .right{
+            .notification{
+                i{ color: $heading-color; }
+                &:hover{
+                    i{color: $secondary-color;}
+                }
+            }
+        }
+    }
+    .content-section{
+        .menu-contents{
+            h3{ 
+                color: $primary-color;
+                span.count{
+                    color: $heading-color;
+                    padding-left: 25px;
+                    @media #{$breakpoint-md-desktop} {
+                        padding-left: 20px;
+                    }
+                }
+            }
+            margin-top: 2.25rem;
+            @media #{$breakpoint-md-desktop}{
+                margin-top: 1.75rem;
+            }
+            .menu-options{
+                margin-top: 1.5rem;
+                @include display-flex(flex);
+                @include align-items-center;
+                @include justify-content-between;
+                @media #{$breakpoint-md-desktop}{
+                    margin-top: 1.25rem;
+                }
+                .option-items{
+                    li{
+                        &:not(:last-child){
+                            margin-right: 10px;
+                        }
+                       
+                    }
+                }
+            }
+        }
+        a.more-link{
+            &.is-border{
+                max-width: 42px;
+                @media #{$breakpoint-md-desktop}{
+                    max-width: 34px;
+                }
+            }
+        }
+        .table-view{
+            margin-top: 1rem;
+            @media #{$breakpoint-md-desktop}{
+                margin-top: 0.75rem;
+            }
+            .custom-tab{
+                .custom-tab-content{
+                    padding: 0;
+                }
+            }
+            table{
+                a{
+                    @include display-flex(inline-flex);
+                    @include align-items-center;
+                    &.is-end{
+                        @include justify-content-end;
+                    }
+                    &.load-more{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .content-wrap{
+            margin-top: 35px;
+            @media #{$breakpoint-md-desktop}{
+                margin-top: 25px;
+            }
+            .resource-wrap{
+                @include radius(8px);
+                padding: 15px;
+                border: 1px solid $border-color;
+                background: $grey-light;
+                h3{ 
+                    margin-top: 5px;
+                    color: $primary-color;
+                }
+                ul{
+                    margin-top: 20px;
+                    li.resource-list{
+                        margin-bottom: 8px;
+                        @include radius(10px);
+                        @media #{$breakpoint-md-desktop}{
+                            margin-bottom: 5px;
+                        }
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                        a.resource-link-card{
+                            @include radius(10px);
+                            background: $white-color;
+                            border: 1px solid $border-color;
+                            padding: 5px 15px;
+                            @include display-flex(flex);
+                            @include align-items-center;
+                            @include justify-content-between;
+                            &:hover{
+                                // background: $secondary-light-1;
+                               border: 1px solid $secondary-medium;
+                            }
+                        }
+                        .label-wrap{
+                            @include display-flex(flex);
+                            @include align-items-center;
+                            .label{
+                                text-transform: capitalize;
+                                color: $body-color;
+                                font-weight: 400;
+                            }
+                            .icon-content{
+                                margin-right: 10px;
+                                width: 46px;
+                                height: 46px;
+                                @include display-flex(flex);
+                                @include align-items-center;
+                                @include justify-content-center;
+                                text-align: center;
+                                @include radius(8px);
+                                @media #{$breakpoint-md-desktop}{
+                                    width: 40px;
+                                    height: 40px;
+                                }
+                                &.is-red{
+                                    background: $red-light;
+                                    i{ color: $red-color;}
+                                }
+                                &.is-dark-blue{
+                                    background: $dark-blue-light;
+                                    i{ color: $dark-blue; }
+                                }
+                                &.is-blue{
+                                    background: $blue-light;
+                                    i{ color: $blue-color; }
+                                }
+                                &.is-orange{
+                                    background: $secondary-light;
+                                    i{ color: $secondary-color;}
+                                }
+                                &.is-purple{
+                                    background: $purple-light;
+                                    i{ color: $purple-color;}
+                                }
+                                &.is-green{
+                                    background: $primary-light;
+                                    i{ color: $primary-color;}
+                                }
+                                &.is-yellow{
+                                    background: $yellow-light;
+                                    i{ color: $yellow-color;}
+                                }
+                            }
+                        }
+                        .total-count{
+                            padding-left: 8px;
+                            span{
+                                font-weight: 700;
+                                color: $heading-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

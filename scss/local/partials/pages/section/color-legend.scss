@@ -1,0 +1,32 @@
+ul.color-legend{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    @include display-flex(flex);
+    @include align-items-center;
+    width: 300px;
+    li{
+        flex: 0 0 20%;
+        max-width: 20%;
+        position: relative;
+        margin-left: 2px;
+        .color {
+            width: 100%;
+            height: 6px;
+            @media #{$breakpoint-md-desktop}{
+                height: 4px;
+            }
+        }
+        span {
+            font-size: 13px;
+            line-height: 15px;
+            display: inline;
+            margin-left: -25%;
+        }
+        &:first-child {
+            span{
+                margin-left: 0;
+            }
+        }
+    }
+}

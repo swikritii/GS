@@ -1,0 +1,136 @@
+.nav-card{
+    margin-top: 1.5rem;
+    @include display-flex(flex);
+    @include align-items-center;
+    @media #{$breakpoint-md-desktop}{
+        margin-top: 1.125rem;
+    }
+    .card-item{
+        width: 100%;
+        background: $grey-light;
+        height: 85px;
+        @include radius(10px);
+        @include transition(all .4s ease);
+        padding: 15px 20px;
+        @media #{$breakpoint-md-desktop}{
+            padding: 10px 15px;
+            height: 70px;
+        }
+        &:nth-child(1),
+        &:nth-child(2){
+            flex: 0 0 19%;
+            margin-right: 1%;
+        }
+        &:last-child{
+            flex: 0 0 60%;
+        }
+        
+        &:hover{
+            &.is-red{
+                background: rgba($secondary-color, 0.1);
+            }
+            &.is-green{
+                background: $primary-light;
+            }
+        }
+        &.pd-0{
+            padding: 0;
+        }
+        &.is-flex{
+            @include display-flex(flex);
+            @include align-items-center;
+        }
+        a.card-link{
+            padding: 15px 20px;
+            height: 100%;
+            display: block;
+            cursor: pointer;
+            @include display-flex(flex);
+            @include align-items-center;
+            @media #{$breakpoint-md-desktop}{
+                padding: 10px 15px;
+            }
+        }
+        .icon{
+            width: 50px;
+            height: 50px;
+            line-height: 68px;
+            text-align: center;
+            @include radius(10px);
+            margin-right: 20px;
+            &.is-red{
+                background: rgba($secondary-color, .15);
+                i{
+                    color: $secondary-color;
+                }
+            }
+            &.is-green{
+                background: rgba($primary-color, .15);
+                i{
+                    color: $primary-color;
+                }
+            }
+            @media #{$breakpoint-md-desktop}{
+                width: 45px;
+                height: 45px;
+                line-height: 62px;
+            }
+
+        }
+        .info{
+           
+            .label{
+                margin-bottom: 10px;
+                @media #{$breakpoint-md-desktop}{
+                    margin-bottom: 7px;
+                }
+            }
+            h5{font-weight: 400;}
+            h3.total{
+                font-weight: 700;
+                &.is-male{
+                    color: $dark-blue;
+                }
+                &.is-female{
+                    color: $blue-color;
+                }
+                &.is-others{
+                    color: $secondary-color;
+                }
+            }
+        }
+        .population-info, 
+        .population-infobar{
+            flex: 0 0 50%;
+            max-width: 50%;
+            @include display-flex(flex);
+            @include align-items-center;
+            .info{
+                flex: 0 0 33.33333%;
+                max-width: 33.33333%;
+            }
+        }
+        .population-infobar{
+            height: 8px;
+            @media #{$breakpoint-md-desktop}{
+                height: 5px;
+            }
+            .male-percentage{
+                height: 100%;
+                flex: 0 0 58%;
+                background: $dark-blue;
+            }
+            .female-percentage{
+                height: 100%;
+                flex: 0 0 40%;
+                background: $blue-color;
+            }
+            .others-percentage{
+                height: 100%;
+                flex: 0 0 2%;
+                
+                background: $secondary-color;
+            }
+        }
+    }
+}

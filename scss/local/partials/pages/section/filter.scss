@@ -1,0 +1,148 @@
+.common-button{
+    &.filter-button{
+        svg{
+            @media #{$breakpoint-md-desktop}{
+                max-width: 16px;
+            }
+        }
+        &.active,
+        &:hover{
+            background: $secondary-light-1;
+            span{
+                color: $heading-color;
+            }
+            svg{
+                @include transition(all .4s ease);
+                path#Path_5175{
+                    fill: $black-color;
+                }
+            }
+        }
+    }
+}
+
+ul.filter-dropdown{
+    width: calc(100vw - 280px);
+    // margin: 0 calc(-50vw + 48.25vw);
+    margin-left: -40px;
+    position: absolute;
+    top: 120%;
+    z-index: 1000;
+    background-color: $grey-light;
+    border: 0px solid $border-color;
+    @include transition(all .4s ease);
+    @media #{$breakpoint-md-desktop}{
+        width: calc(100vw - 250px);
+        margin-left: -37px;
+    }
+   /*  overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    -ms-overflow-style:-ms-autohiding-scrollbar;
+    @include transition(all .4s ease);
+    max-height: 0;
+    @include radius(5px);
+    &::-webkit-scrollbar {
+      width: 4px;
+      background: $border-color;
+      @include radius(4px);
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color:$border-color;
+        @include radius(4px);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @include radius(4px);
+        background: $border-dark;
+    } */
+    @include animation(opacity .6s ease-in);
+    max-height: 0;
+    li.list-item{
+        padding: .5rem 2.5rem 0;
+        height: 100%;
+        visibility: hidden;
+        opacity: 0;
+        @include transition(all .2s ease-in);
+        transition-delay: .1s;
+        &:not(:last-child){
+            padding-bottom: 0rem;
+        }
+        // @include animation(opacity .8s linear);
+        &.is-flex{
+            @include display-flex(flex);
+            @include align-items-center;
+            @include justify-content-between;
+        }
+        .list-item-in{
+            flex: 0 0 70%;
+            &.is-flex{
+                @include display-flex(flex);
+                @include align-items-center;
+            }
+            .separator,
+            .form-group{
+                margin:0 10px;
+            }
+            .form-control{
+                height: 34px;
+            }
+            .custom-select {
+                p.selected-item {
+                    height: 34px;
+                    line-height: 34px;
+                    span{
+                        font-weight: 400;   
+                    }   
+                }
+            }
+        }
+        .options{
+            flex: 0 0 30%;
+            @include display-flex(flex);
+            @include justify-content-end;
+            a{
+                text-align: center;
+                width: 34px ;
+                height: 34px;
+                line-height: 48px;
+                @include radius(10px);
+                display: inline-block;
+                border: 1px solid $border-color;
+                cursor: pointer;
+                @include transition(all .4s ease);
+               
+                &.remove{
+                    background: $white-color;
+                    i{
+                        color: $body-color;
+                    }
+                    margin-right: 10px;
+                    &:hover{
+                        background: $secondary-light-1;
+                    }
+                }
+                &.add{
+                    background: $secondary-light-1;
+                    i{
+                        color: $heading-color;
+                    }
+                    &:hover{
+                        background: $secondary-light;
+                    }
+                }
+                    
+            }
+        }
+    }
+    &.active{
+        border: 1px solid $border-color;
+        max-height: 300px;
+        height: auto;
+        li.list-item{
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+        }
+    }
+}

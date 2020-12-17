@@ -1,0 +1,103 @@
+.search-bar{
+    @include display-flex(flex);
+    @include justify-content-end;
+    @include align-items-center;
+    .search-wrap{
+        @include display-flex(flex);
+        @include justify-content-between;
+        border:0px solid $border-color;
+        @include radius(5px);
+        @include align-items-stretch;
+        background-color: $bg-color;
+        flex-grow: 1;
+        max-width: 240px;
+        
+        input{
+            &.form-control{
+                flex-grow: 1;
+                height: calc(1.6rem + .75rem + 2px);
+                border:none;
+                display: initial;
+                @include radius(5px);
+                background-color: $primary-light;
+                &:focus{
+                    background-color: darken($primary-light, 5%);
+                }
+            }
+        }
+        span{
+            padding:0 .5rem;
+            padding-right:0;
+            text-align:center;
+            @include radius(5px);
+            @include display-flex(flex);
+            @include justify-content-center;
+            @include align-items-center;
+            @include flex-direction-column(column);
+            cursor: pointer;
+            i{
+                font-size: 1.5rem;
+                color:$primary-color;
+            }
+        }
+    }
+    button{
+        padding:0;
+        width:40px;
+        height: 37px;
+        min-width: initial;
+        border-color: $border-dark;
+        @include radius(8px);
+        margin-left: .6125rem;
+        background-color: $white-color;
+        color:$secondary-color;
+        margin-left:1rem;
+        &:focus,&:hover{
+            background-color: $secondary-color;
+            color:$white-color;
+            outline: none;
+            -webkit-outline:none;
+            box-shadow: none;
+        }
+    }
+    a{
+        &.toggle-icon{
+            margin-left: 1rem;
+            color:$body-color;
+            svg{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    &.is-full{
+        .search-wrap{
+            max-width: 100%;
+        }
+    }
+}
+
+.input-search{
+    position: relative;
+    input{
+        &.form-search{
+            padding-left: 3rem;
+            width: 320px;
+            height: calc(2.5em + 0.5rem + 1px);
+            border: 1px solid $primary-light;
+            background-color: $primary-light;
+            &:focus{
+                background-color: darken($primary-light, 4%);
+            }
+            @media #{$breakpoint-md-desktop}{
+                width: 280px;
+                height: calc(2.5em + 0.42em + 1px);
+            }
+        }
+        & + i{
+            position: absolute;
+            top:25%;
+            left: 1rem;
+        }
+    }
+}
+

@@ -1,0 +1,42 @@
+.sub-menu a{
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: $white-color;
+    @include transition(color .2s ease);
+    padding: 5px 0;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        width: 0;
+        right: 0;
+        height: 3px;
+        -webkit-transition: width .25s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+        -o-transition: width .25s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+        transition: width .25s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+        background: $primary-color;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        width: 0;
+        right: 0;
+        height: 3px;
+        -webkit-transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+        -o-transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+        transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+        background: $secondary-color;
+    }
+    &:hover{
+        &::after,
+        &::before{
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+

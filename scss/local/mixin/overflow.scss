@@ -1,0 +1,46 @@
+.is-overflow {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    height: 100%;
+  
+    &::-webkit-scrollbar {
+        width: 6px;
+        background: transparent;
+        @include radius(4px);
+        @media #{$breakpoint-desktop}{
+            width: 4px;
+          }
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $bg-color;
+        @include radius(10px);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @include radius(10px);
+        background: $body-light;
+        cursor: pointer;
+    }
+
+    &.no-scrollbar{
+        &::-webkit-scrollbar {
+            width:0;
+        }
+    }
+
+    &.main-scroll{
+    
+        &::-webkit-scrollbar-track {
+            background-color: $body-light;
+            @include radius(10px);
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            @include radius(10px);
+            background: $body-color;
+            cursor: pointer;
+        }
+    }
+}
